@@ -2,7 +2,12 @@
 
 {% load static %}
 
+<a href="{% url 'blog:all_blogs' %}">Blog</a>
+<br>
+
 <img src="{% static 'portfolio/cAIF02cn3Ws.jpg' %}">
+<br>
+
 {% for project in projects %}
 <h2>{{ project.title }}</h2>
 <p>{{ project.discrition }}</p>
