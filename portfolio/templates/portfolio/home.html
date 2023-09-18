@@ -1,20 +1,25 @@
-<h1>Ilya's Portfolio</h1>
+{% extends 'portfolio/base.html' %}    
 
-{% load static %}
+{% block cntent %}
+    <h1>Ilya's Portfolio</h1>
 
-<a href="{% url 'blog:all_blogs' %}">Blog</a>
-<br>
+    {% load static %}
 
-<img src="{% static 'portfolio/cAIF02cn3Ws.jpg' %}">
-<br>
+    <a href="{% url 'blog:all_blogs' %}">Blog</a>
+    <br>
 
-{% for project in projects %}
-<h2>{{ project.title }}</h2>
-<p>{{ project.discrition }}</p>
-<img src="{{ project.image.url }}">
+    <img src="{% static 'portfolio/cAIF02cn3Ws.jpg' %}">
+    <br>
 
-{% if project.url %}
-<br>
-<a href="{{ project.url }}">Link</a>
-{% endif %}
-{% endfor %}
+    {% for project in projects %}
+    <h2>{{ project.title }}</h2>
+    <p>{{ project.discrition }}</p>
+    <img src="{{ project.image.url }}">
+
+    {% if project.url %}
+    <br>
+    <a href="{{ project.url }}">Link</a>
+    {% endif %}
+    {% endfor %}
+
+{% endblock %}
